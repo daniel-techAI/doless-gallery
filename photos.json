@@ -1,0 +1,327 @@
+[
+  {
+    "id": "architecture",
+    "title": "Architecture",
+    "subtitle": "Vienna after dark, stone in daylight.",
+    "items": [
+      {
+        "id": "night-arcade",
+        "title": "Night arcade",
+        "alt": "Warmly lit stone arches receding into the distance, with people moving beneath them.",
+        "section": "architecture",
+        "width": 1086,
+        "height": 1448,
+        "src": "assets/photos/night-arcade-1600.webp",
+        "thumb": "assets/photos/night-arcade-640.webp"
+      },
+      {
+        "id": "copper-after-dark",
+        "title": "Copper after dark",
+        "alt": "A green copper dome with glowing circular windows against a dark night sky.",
+        "section": "architecture",
+        "width": 1086,
+        "height": 1448,
+        "src": "assets/photos/copper-after-dark-1600.webp",
+        "thumb": "assets/photos/copper-after-dark-640.webp"
+      },
+      {
+        "id": "opera-lamplight",
+        "title": "Opera & lamplight",
+        "alt": "The illuminated Vienna State Opera behind an ornate street lamp.",
+        "section": "architecture",
+        "width": 1086,
+        "height": 1448,
+        "src": "assets/photos/opera-lamplight-1600.webp",
+        "thumb": "assets/photos/opera-lamplight-640.webp"
+      },
+      {
+        "id": "through-the-stone",
+        "title": "Through the stone",
+        "alt": "The Vienna State Opera framed by large stone architectural details.",
+        "section": "architecture",
+        "width": 1086,
+        "height": 1448,
+        "src": "assets/photos/through-the-stone-1600.webp",
+        "thumb": "assets/photos/through-the-stone-640.webp"
+      },
+      {
+        "id": "above-the-city",
+        "title": "Above the city",
+        "alt": "A warmly illuminated Generali facade, green roof and rooftop sculptures.",
+        "section": "architecture",
+        "width": 1086,
+        "height": 1448,
+        "src": "assets/photos/above-the-city-1600.webp",
+        "thumb": "assets/photos/above-the-city-640.webp"
+      },
+      {
+        "id": "stone-reflection",
+        "title": "Stone & reflection",
+        "alt": "A domed church reflected in a broad pool in evening light.",
+        "section": "architecture",
+        "width": 1254,
+        "height": 1254,
+        "src": "assets/photos/stone-reflection-1600.webp",
+        "thumb": "assets/photos/stone-reflection-640.webp"
+      },
+      {
+        "id": "above-the-square",
+        "title": "Above the square",
+        "alt": "A Gothic cathedral tower above historic buildings and a busy square.",
+        "section": "architecture",
+        "width": 2400,
+        "height": 3200,
+        "src": "assets/photos/above-the-square-1600.webp",
+        "thumb": "assets/photos/above-the-square-640.webp"
+      },
+      {
+        "id": "a-glimpse-of-turquoise",
+        "title": "A glimpse of turquoise",
+        "alt": "A small white chapel with a turquoise roof among dark evergreen trees.",
+        "section": "architecture",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/a-glimpse-of-turquoise-1600.webp",
+        "thumb": "assets/photos/a-glimpse-of-turquoise-640.webp"
+      }
+    ]
+  },
+  {
+    "id": "street",
+    "title": "Street & elsewhere",
+    "subtitle": "Shop windows, seaside light and places in between.",
+    "items": [
+      {
+        "id": "electric-blue",
+        "title": "Electric blue",
+        "alt": "A sticker-covered storefront glowing blue at night with a red OPEN sign.",
+        "section": "street",
+        "width": 3072,
+        "height": 4096,
+        "src": "assets/photos/electric-blue-1600.webp",
+        "thumb": "assets/photos/electric-blue-640.webp"
+      },
+      {
+        "id": "time-collected",
+        "title": "Time, collected",
+        "alt": "A warm shop window filled with ornate plates, clocks, portraits and antiques.",
+        "section": "street",
+        "width": 5818,
+        "height": 7757,
+        "src": "assets/photos/time-collected-1600.webp",
+        "thumb": "assets/photos/time-collected-640.webp"
+      },
+      {
+        "id": "the-wheel-at-dusk",
+        "title": "The wheel at dusk",
+        "alt": "A Ferris wheel silhouetted against a bright, clouded sky by the sea.",
+        "section": "street",
+        "width": 720,
+        "height": 1280,
+        "src": "assets/photos/the-wheel-at-dusk-1600.webp",
+        "thumb": "assets/photos/the-wheel-at-dusk-640.webp"
+      },
+      {
+        "id": "a-little-further-out",
+        "title": "A little further out",
+        "alt": "A beach, pier and Ferris wheel beneath an open sky.",
+        "section": "street",
+        "width": 1280,
+        "height": 720,
+        "src": "assets/photos/a-little-further-out-1600.webp",
+        "thumb": "assets/photos/a-little-further-out-640.webp"
+      },
+      {
+        "id": "under-the-palms",
+        "title": "Under the palms",
+        "alt": "Palm trees and a stone tower beside a sunlit curved path.",
+        "section": "street",
+        "width": 4096,
+        "height": 3072,
+        "src": "assets/photos/under-the-palms-1600.webp",
+        "thumb": "assets/photos/under-the-palms-640.webp"
+      }
+    ]
+  },
+  {
+    "id": "landscapes",
+    "title": "Open landscapes",
+    "subtitle": "The long way round.",
+    "items": [
+      {
+        "id": "the-golden-path",
+        "title": "The golden path",
+        "alt": "A narrow mountain path through golden grasses and conifers towards rocky peaks.",
+        "section": "landscapes",
+        "width": 6048,
+        "height": 8064,
+        "src": "assets/photos/the-golden-path-1600.webp",
+        "thumb": "assets/photos/the-golden-path-640.webp"
+      },
+      {
+        "id": "rock-blue",
+        "title": "Rock & blue",
+        "alt": "Dramatic rocky mountain peaks beneath textured blue clouds.",
+        "section": "landscapes",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/rock-blue-1600.webp",
+        "thumb": "assets/photos/rock-blue-640.webp"
+      },
+      {
+        "id": "layers-of-quiet",
+        "title": "Layers of quiet",
+        "alt": "A blue mountain valley framed by evergreen branches.",
+        "section": "landscapes",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/layers-of-quiet-1600.webp",
+        "thumb": "assets/photos/layers-of-quiet-640.webp"
+      },
+      {
+        "id": "stone-on-the-hillside",
+        "title": "Stone on the hillside",
+        "alt": "A ruined castle on a rocky, grassy hillside beneath a blue sky.",
+        "section": "landscapes",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/stone-on-the-hillside-1600.webp",
+        "thumb": "assets/photos/stone-on-the-hillside-640.webp"
+      }
+    ]
+  },
+  {
+    "id": "nature",
+    "title": "Nature & details",
+    "subtitle": "A closer look changes everything.",
+    "items": [
+      {
+        "id": "red-in-shadow",
+        "title": "Red in shadow",
+        "alt": "A red rose lit from the side against a deep black garden background.",
+        "section": "nature",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/red-in-shadow-1600.webp",
+        "thumb": "assets/photos/red-in-shadow-640.webp"
+      },
+      {
+        "id": "small-forest",
+        "title": "Small forest",
+        "alt": "Two tiny mushrooms growing from vivid green moss in soft sunlight.",
+        "section": "nature",
+        "width": 2400,
+        "height": 3200,
+        "src": "assets/photos/small-forest-1600.webp",
+        "thumb": "assets/photos/small-forest-640.webp"
+      },
+      {
+        "id": "a-small-visitor",
+        "title": "A small visitor",
+        "alt": "A bumblebee among the purple florets of a thistle.",
+        "section": "nature",
+        "width": 3000,
+        "height": 4000,
+        "src": "assets/photos/a-small-visitor-1600.webp",
+        "thumb": "assets/photos/a-small-visitor-640.webp"
+      },
+      {
+        "id": "caught-in-the-light",
+        "title": "Caught in the light",
+        "alt": "Golden grasses backlit by low sunlight, with a softly blurred background.",
+        "section": "nature",
+        "width": 3464,
+        "height": 4618,
+        "src": "assets/photos/caught-in-the-light-1600.webp",
+        "thumb": "assets/photos/caught-in-the-light-640.webp"
+      },
+      {
+        "id": "through-the-garden",
+        "title": "Through the garden",
+        "alt": "A leafy arch with red flowers framing a sunlit garden path and a distant bench.",
+        "section": "nature",
+        "width": 3296,
+        "height": 4393,
+        "src": "assets/photos/through-the-garden-1600.webp",
+        "thumb": "assets/photos/through-the-garden-640.webp"
+      },
+      {
+        "id": "among-the-roses",
+        "title": "Among the roses",
+        "alt": "A statue surrounded by roses and green garden foliage in warm sunlight.",
+        "section": "nature",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/among-the-roses-1600.webp",
+        "thumb": "assets/photos/among-the-roses-640.webp"
+      },
+      {
+        "id": "firelight",
+        "title": "Firelight",
+        "alt": "Orange flames curling around dark crossed logs and glowing embers.",
+        "section": "nature",
+        "width": 1448,
+        "height": 1086,
+        "src": "assets/photos/firelight-1600.webp",
+        "thumb": "assets/photos/firelight-640.webp"
+      },
+      {
+        "id": "a-little-warmth",
+        "title": "A little warmth",
+        "alt": "A burning log and a close curl of orange flame against a dark background.",
+        "section": "nature",
+        "width": 1448,
+        "height": 1086,
+        "src": "assets/photos/a-little-warmth-1600.webp",
+        "thumb": "assets/photos/a-little-warmth-640.webp"
+      }
+    ]
+  },
+  {
+    "id": "animals",
+    "title": "Quiet company",
+    "subtitle": "A pause, a glance, a little patience.",
+    "items": [
+      {
+        "id": "no-rush",
+        "title": "No rush",
+        "alt": "A grey horse wearing a red halter beneath leafy branches.",
+        "section": "animals",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/no-rush-1600.webp",
+        "thumb": "assets/photos/no-rush-640.webp"
+      },
+      {
+        "id": "in-profile",
+        "title": "In profile",
+        "alt": "A black-and-white cat in side profile against a soft background.",
+        "section": "animals",
+        "width": 3456,
+        "height": 4608,
+        "src": "assets/photos/in-profile-1600.webp",
+        "thumb": "assets/photos/in-profile-640.webp"
+      },
+      {
+        "id": "by-the-water",
+        "title": "By the water",
+        "alt": "A flamingo standing in shallow water beneath hanging green branches.",
+        "section": "animals",
+        "width": 1024,
+        "height": 1536,
+        "src": "assets/photos/by-the-water-1600.webp",
+        "thumb": "assets/photos/by-the-water-640.webp"
+      },
+      {
+        "id": "in-the-grass",
+        "title": "In the grass",
+        "alt": "A cat sitting in green grass, looking to one side.",
+        "section": "animals",
+        "width": 2400,
+        "height": 3200,
+        "src": "assets/photos/in-the-grass-1600.webp",
+        "thumb": "assets/photos/in-the-grass-640.webp"
+      }
+    ]
+  }
+]
