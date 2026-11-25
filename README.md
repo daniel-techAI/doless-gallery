@@ -17,3 +17,5 @@ Photo metadata lives in `gallery-data.js`; `photos.json` is its readable compani
 All photographs and DOLESS branding are © Daniel Laky. All rights reserved. This public repository is a hosting and portfolio source; it does not grant permission to reuse the photographs. See `ASSET-RIGHTS.md`.
 
 The site contains no contact form, analytics tracker, cookies, credentials, private Drive links or camera originals. Contact links open a phone call or the photographer’s Instagram profile. Google Fonts is optional; local system fallbacks keep the layout usable if it is blocked.
+
+Lighting follows the mouse on devices with a fine pointer and returns to independent frame tracking on scroll. Touchscreens use scroll tracking. Reduced-motion preferences disable the moving lamps. Photograph context menus, image dragging and supported mobile image callouts are suppressed as casual-saving deterrents; these measures cannot prevent screenshots or downloading public web assets.

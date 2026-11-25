@@ -25,36 +25,65 @@
   dialog.addEventListener('close',()=>{document.body.style.overflow='';opener?.focus({preventScroll:true});});
   dialog.addEventListener('touchstart',event=>{touchX=event.changedTouches[0].clientX;},{passive:true});dialog.addEventListener('touchend',event=>{if(touchX===null)return;const distance=event.changedTouches[0].clientX-touchX;if(Math.abs(distance)>60)move(distance<0?1:-1);touchX=null;},{passive:true});
   document.querySelector('#year').textContent=new Date().getFullYear();
+  const picker=document.querySelector('#collection-picker');
+  picker.addEventListener('change',()=>document.querySelector(`[data-filter="${picker.value}"]`).click());
+  filters.forEach(button=>button.addEventListener('click',()=>{picker.value=button.dataset.filter;}));
+  // Discourage casual saving without disabling normal link or keyboard controls.
+  document.querySelectorAll('img').forEach(image=>{image.draggable=false;});
+  const isPhotograph=target=>target instanceof Element&&target.closest('img,.photo-button,.viewer-image,.hero-main,.hero-detail,.about-photo');
+  document.addEventListener('contextmenu',event=>{if(isPhotograph(event.target))event.preventDefault();});
+  document.addEventListener('dragstart',event=>{if(isPhotograph(event.target))event.preventDefault();});
   const rig=document.querySelector('.gallery-light-rig');
   const room=document.querySelector('.gallery-section');
   const frames=[...document.querySelectorAll('.photo-card')];
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let scheduled=false;
+  const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
+  let scheduled=false,pointer=null,lastTime=0;
+  const angles={left:0,right:0};
+  const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
   function lightGallery(){
     scheduled=false;
-    const height=innerHeight,width=innerWidth,bounds=room.getBoundingClientRect();
-    const inGallery=bounds.top<height*.7&&bounds.bottom>height*.3;
+    const height=innerHeight,width=document.documentElement.clientWidth,bounds=room.getBoundingClientRect();
+    const inGallery=bounds.top<height*.72&&bounds.bottom>height*.28&&!dialog.open;
     rig.classList.toggle('illuminated',inGallery);
-    let nearest=null,nearestDistance=Infinity;
-    for(const frame of frames){
-      if(frame.closest('[hidden]'))continue;
-      const rect=frame.getBoundingClientRect();
-      if(rect.bottom< -120||rect.top>height+120)continue;
-      const center=rect.top+rect.height*.5,distance=Math.abs(center-height*.52);
-      const intensity=Math.max(0,1-distance/(height*.78));
-      frame.style.setProperty('--light-level',reduced.matches?'.3':intensity.toFixed(3));
-      frame.style.setProperty('--light-angle',`${Math.atan2(height*.44-center,-rect.left-rect.width*.5)*180/Math.PI+90}deg`);
-      frame.style.setProperty('--float-y',`${reduced.matches?0:Math.max(-13,Math.min(13,(center-height*.5)*-.025))}px`);
-      if(distance<nearestDistance){nearest=rect;nearestDistance=distance;}
+    const measured=frames.filter(frame=>!frame.closest('[hidden]')).map(frame=>({frame,rect:frame.querySelector('.photo-button').getBoundingClientRect()})).filter(({rect})=>rect.bottom>0&&rect.top<height);
+    const leftSource={x:24,y:height*.43},rightSource={x:width-24,y:height*.63};
+    const mouse=pointer&&finePointer.matches&&!reduced.matches&&inGallery?pointer:null;
+    function targetFor(side){
+      if(mouse)return {x:clamp(mouse.x,45,width-45),y:clamp(mouse.y,90,height-50)};
+      const source=side==='left'?leftSource:rightSource;
+      let selected=null,score=Infinity;
+      for(const item of measured){const {rect}=item,x=rect.left+rect.width*.5,y=clamp(source.y,rect.top+rect.height*.18,rect.bottom-rect.height*.18);const candidate=Math.abs(y-source.y)+Math.abs(x-source.x)*.28;if(candidate<score){score=candidate;selected={x,y:clamp(y,100,height-55)};}}
+      return selected||{x:width*.5,y:height*.5};
     }
-    if(nearest&&!reduced.matches){
-      const x=nearest.left+nearest.width*.5,y=nearest.top+nearest.height*.45;
-      rig.style.setProperty('--left-angle',`${Math.atan2(y-height*.43,Math.max(80,x-35))*180/Math.PI}deg`);
-      rig.style.setProperty('--right-angle',`${Math.atan2(y-height*.63,Math.max(80,width-x-35))*180/Math.PI}deg`);
+    const left=targetFor('left'),right=targetFor('right');
+    const desired={left:clamp(Math.atan2(left.y-leftSource.y,Math.max(45,left.x-leftSource.x))*180/Math.PI,-68,68),right:clamp(Math.atan2(right.y-rightSource.y,Math.max(45,rightSource.x-right.x))*180/Math.PI,-68,68)};
+    const now=performance.now(),dt=lastTime?Math.min(50,now-lastTime):16;lastTime=now;
+    const ease=reduced.matches?1:1-Math.exp(-dt/100);
+    for(const side of ['left','right'])angles[side]+=(desired[side]-angles[side])*ease;
+    rig.style.setProperty('--left-angle',`${angles.left.toFixed(3)}deg`);
+    rig.style.setProperty('--right-angle',`${angles.right.toFixed(3)}deg`);
+    rig.dataset.tracking=mouse?'pointer':'scroll';
+    for(const {frame,rect} of measured){
+      const x=rect.left+rect.width*.5,y=rect.top+rect.height*.5;
+      const scrollLevel=clamp(1-Math.abs(y-height*.5)/(height*.85),0,1);
+      const distance=mouse?Math.hypot(Math.max(rect.left-mouse.x,0,mouse.x-rect.right),Math.max(rect.top-mouse.y,0,mouse.y-rect.bottom)):0;
+      const level=mouse?clamp(1-distance/450,.12,1):scrollLevel;
+      frame.style.setProperty('--light-level',reduced.matches?'.28':(.18+level*.67).toFixed(3));
+      const edge=mouse||leftSource;
+      frame.style.setProperty('--left-edge-angle',`${Math.atan2(edge.y-y,edge.x-x)*180/Math.PI+90}deg`);
+      frame.style.setProperty('--right-edge-angle',`${Math.atan2(rightSource.y-y,rightSource.x-x)*180/Math.PI+90}deg`);
+      frame.style.setProperty('--light-x',`${mouse?clamp((mouse.x-rect.left)/rect.width*100,0,100):20}%`);
+      frame.style.setProperty('--light-y',`${mouse?clamp((mouse.y-rect.top)/rect.height*100,0,100):40}%`);
     }
+    if(inGallery&&!reduced.matches&&(Math.abs(desired.left-angles.left)>.05||Math.abs(desired.right-angles.right)>.05))scheduleLights();
   }
   function scheduleLights(){if(!scheduled){scheduled=true;requestAnimationFrame(lightGallery);}}
-  addEventListener('scroll',scheduleLights,{passive:true});addEventListener('resize',scheduleLights);
+  addEventListener('scroll',()=>{pointer=null;scheduleLights();},{passive:true});addEventListener('resize',scheduleLights);
+  addEventListener('pointermove',event=>{if(event.pointerType==='mouse'&&finePointer.matches){pointer={x:event.clientX,y:event.clientY};scheduleLights();}},{passive:true});
+  document.addEventListener('pointerleave',()=>{pointer=null;scheduleLights();});
+  reduced.addEventListener('change',scheduleLights);
+  dialog.addEventListener('close',scheduleLights);
   filters.forEach(button=>button.addEventListener('click',scheduleLights));
   document.fonts.ready.then(scheduleLights);lightGallery();
 })();

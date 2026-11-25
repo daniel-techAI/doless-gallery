@@ -29,3 +29,25 @@
 @media(max-width:1100px){.photo-grid{padding-inline:2%;row-gap:85px}.photo-card:nth-child(8n+2),.photo-card:nth-child(8n+6){margin-top:100px}.photo-card:nth-child(8n+4){margin-top:80px}.photo-card:nth-child(8n+8){margin-top:120px}.reflector{width:24px}.reflector-left{left:-5px}.reflector-right{right:-5px}.shaft-left{left:12px}.shaft-right{right:12px}}
 @media(max-width:760px){.collection{padding-block:50px 65px}.collection-head{margin-bottom:42px}.collection-head h3{font-size:34px}.collection-count{font-size:9px}.photo-grid{column-gap:0;row-gap:65px;padding-inline:1%}.photo-card:nth-child(8n+1){grid-column:1/10;margin-top:0}.photo-card:nth-child(8n+2){grid-column:6/13;margin-top:-10px}.photo-card:nth-child(8n+3){grid-column:1/8;margin-top:-5px}.photo-card:nth-child(8n+4){grid-column:4/13;margin-top:5px}.photo-card:nth-child(8n+5){grid-column:1/10;margin-top:0}.photo-card:nth-child(8n+6){grid-column:6/13;margin-top:-5px}.photo-card:nth-child(8n+7){grid-column:1/9;margin-top:5px}.photo-card:nth-child(8n+8){grid-column:5/13;margin-top:0}.photo-button{padding:8px;box-shadow:0 18px 35px -12px #000}.photo-card figcaption{padding-top:14px;font-size:12px}.light-shaft{opacity:.12;width:100vw;height:330px}.shaft-left{top:calc(43% - 165px)}.shaft-right{top:calc(63% - 165px)}.reflector-left{left:-12px}.reflector-right{right:-12px}.view-label{display:none}.collection-head p{max-width:240px}.about-section{padding-top:65px}}
 @media(prefers-reduced-motion:reduce){.photo-card{transform:none;will-change:auto}.gallery-light-rig{transition:none}.photo-button::before{opacity:.3}}
+
+/* Light stays attached to a stationary frame; the lamps ease toward their target. */
+.photo-card{transform:none;will-change:auto}
+.photo-button::before{background:conic-gradient(from var(--left-edge-angle,270deg),#fff2cb 0deg,#cfb67e80 20deg,transparent 60deg,transparent 310deg,#cfb67e80 340deg,#fff2cb 360deg),conic-gradient(from var(--right-edge-angle,90deg),#fff2cb 0deg,#cfb67e60 18deg,transparent 55deg,transparent 310deg,#cfb67e60 344deg,#fff2cb 360deg);transition:opacity .16s linear}
+.photo-button::after{background:radial-gradient(ellipse at var(--light-x,20%) var(--light-y,40%),#d0b68145,transparent 65%);opacity:calc(var(--light-level)*.45)}
+.light-shaft{opacity:.115;mask-image:linear-gradient(0deg,transparent,#000 20%,#000 80%,transparent)}
+.photo-card figcaption{font-size:14px}.mobile-picker-bar{display:none}
+img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}
+.photo-button,.viewer-image,.hero-main,.hero-detail,.about-photo{-webkit-touch-callout:none}
+.viewer-image img{pointer-events:none}
+@media(min-width:761px) and (max-width:1000px){.hero{gap:30px}.hero h1{font-size:clamp(45px,5.8vw,58px);letter-spacing:-2px}.hero-art{padding-left:10px}}
+@media(max-width:760px){
+ .filter-bar{display:none}.mobile-picker-bar{position:sticky;top:0;z-index:7;display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:10px 20px;background:#101010f7;backdrop-filter:blur(12px);border-block:1px solid var(--line)}
+ .mobile-picker-bar label{font-size:12px;color:var(--muted)}
+ .mobile-picker-bar select{appearance:none;background:#1b1c19 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='m2 4 4 4 4-4' fill='none' stroke='%23c8b18a' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 13px center;color:var(--ink);border:1px solid #414238;border-radius:0;font:inherit;font-size:14px;padding:11px 36px 11px 13px;min-height:44px;max-width:calc(100% - 75px);width:230px}
+ .mobile-picker-bar select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+ .photo-grid{row-gap:46px;padding-inline:1%}.collection{padding-block:40px 52px}.collection-head{margin-bottom:30px}.collection-head h3{font-size:31px}
+ .photo-card:nth-child(8n+1){grid-column:1/12;margin-top:0}.photo-card:nth-child(8n+2){grid-column:3/13;margin-top:0}.photo-card:nth-child(8n+3){grid-column:1/11;margin-top:0}.photo-card:nth-child(8n+4){grid-column:2/13;margin-top:0}.photo-card:nth-child(8n+5){grid-column:1/12;margin-top:0}.photo-card:nth-child(8n+6){grid-column:3/13;margin-top:0}.photo-card:nth-child(8n+7){grid-column:1/11;margin-top:0}.photo-card:nth-child(8n+8){grid-column:2/13;margin-top:0}
+ .photo-card figcaption{font-size:13px;padding-top:13px}.photo-button{padding:7px}.light-shaft{opacity:.075}.hero{padding-top:38px;gap:34px}.hero-art{width:83%}.hero-main>img{max-height:440px}.hero-note{margin-top:17px}
+ .reflector{width:23px;height:23px}.reflector::after{height:17px}.about-section{padding-top:55px}
+}
+@media(prefers-reduced-motion:reduce){.photo-button::before{transition:none}.gallery-light-rig{opacity:0!important}.photo-card{--light-level:.28!important}}

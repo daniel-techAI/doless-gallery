@@ -6,8 +6,8 @@
   <title>DOLESS Photography — Daniel Laky</title>
   <meta name="description" content="A photographic journal by Daniel Laky. Discover Vienna after dark, architecture, street scenes, landscapes and the quiet details in between.">
   <meta property="og:title" content="DOLESS Photography — Daniel Laky"><meta property="og:description" content="Ordinary places. Extraordinary light. Explore the photographic work of Daniel Laky."><meta property="og:type" content="website"><meta property="og:image" content="https://daniel-techai.github.io/doless-gallery/assets/photos/night-arcade-1600.webp">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="exhibition.css">
-  <script src="gallery-data.js" defer></script><script src="app.js" defer></script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="exhibition.css?v=2">
+  <script src="gallery-data.js" defer></script><script src="app.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip" href="#gallery">Skip to photographs</a>
@@ -25,6 +25,7 @@
       <div class="wrap gallery-heading"><div><p class="eyebrow">The gallery</p><h2 id="gallery-title">A closer look.</h2></div><p>Places that stayed with me.<br>Details worth coming back to.</p></div>
       <div class="filter-bar"><div class="wrap filters" role="group" aria-label="Filter photography collections"><button type="button" class="filter active" data-filter="all" aria-pressed="true">All photographs <span>29</span></button><button type="button" class="filter" data-filter="architecture" aria-pressed="false">Architecture</button><button type="button" class="filter" data-filter="street" aria-pressed="false">Street & elsewhere</button><button type="button" class="filter" data-filter="landscapes" aria-pressed="false">Landscapes</button><button type="button" class="filter" data-filter="nature" aria-pressed="false">Nature & details</button><button type="button" class="filter" data-filter="animals" aria-pressed="false">Animals</button></div></div>
       <div class="gallery-light-rig" aria-hidden="true"><div class="light-shaft shaft-left"></div><div class="light-shaft shaft-right"></div><div class="reflector reflector-left"><i></i></div><div class="reflector reflector-right"><i></i></div></div>
+      <div class="mobile-picker-bar"><label for="collection-picker">Collection</label><select id="collection-picker"><option value="all">All photographs · 29</option><option value="architecture">Architecture · 8</option><option value="street">Street & elsewhere · 5</option><option value="landscapes">Landscapes · 4</option><option value="nature">Nature & details · 8</option><option value="animals">Animals · 4</option></select></div>
       <p class="sr-only" id="gallery-status" role="status" aria-live="polite">Showing all 29 photographs.</p>
       <div id="collections" class="wrap"></div>
       <noscript><div class="wrap fallback"><p>The interactive gallery needs JavaScript. You can still explore my work on <a href="https://www.instagram.com/doless_photos/">Instagram @doless_photos</a>.</p></div></noscript>
