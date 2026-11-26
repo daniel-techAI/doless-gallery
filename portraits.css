@@ -1,0 +1,85 @@
+.hero-actions {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 22px;
+}
+
+.hero-actions .text-link {
+  margin-top: 18px;
+}
+
+.portrait-section {
+  border-top: 1px solid var(--line);
+  background: radial-gradient(ellipse at 15% 15%, #28231a 0%, #151513 58%, var(--bg) 100%);
+  padding-block: clamp(55px, 7.5vw, 110px);
+}
+
+.portrait-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 40%);
+  align-items: center;
+  gap: clamp(30px, 8vw, 120px);
+}
+
+.portrait-section h2 {
+  margin-top: 12px;
+  font: 400 clamp(44px, 6vw, 84px)/1.12 var(--serif);
+  letter-spacing: -.04em;
+}
+
+.portrait-intro {
+  max-width: 36ch;
+  margin-top: 22px;
+  color: #c0bcb2;
+}
+
+.portrait-enquiry {
+  padding: clamp(22px, 3vw, 38px);
+  border: 1px solid #4d4639;
+  background: #161614;
+}
+
+.portrait-enquiry h3 {
+  font: 400 27px/1.25 var(--serif);
+  margin-bottom: 12px;
+}
+
+.portrait-enquiry p {
+  color: var(--muted);
+}
+
+.portrait-button {
+  margin: 24px 0 10px;
+  background: var(--accent);
+}
+
+.portrait-button:hover {
+  background: var(--ink);
+}
+
+.portrait-profile {
+  display: block;
+  width: fit-content;
+  padding-block: 7px;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.portrait-enquiry .portrait-language {
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .site-header { gap: 12px; }
+  .site-header nav { gap: clamp(9px, 3vw, 20px); }
+  .portrait-layout { grid-template-columns: 1fr; }
+  .portrait-intro { margin-top: 15px; }
+}
+
+@media (max-width: 380px) {
+  .site-header .wordmark { font-size: 23px; }
+  .site-header nav { font-size: 12px; }
+}
